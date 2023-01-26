@@ -1,0 +1,15 @@
+[package]
+authors = ["Near Ukrainians Guild <@nearuaguild>"]
+edition = "2021"
+name = "near-rust-contract-types-generator"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+witgen = "0.15.0"
+borsh = "0.9.3"
+near-sdk = "4.0.0"
+serde = "1"
+serde_json = "1"
