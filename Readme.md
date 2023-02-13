@@ -4,7 +4,7 @@
   <h2 align="center">Near Protocol | Contract Types Generator</h2>
 
   <p align="center">
-    A working example of generating Typescript types from Near Protocol smart contract written on Rust
+    A working example of generating Typescript types from Near Protocol smart contract written in Rust
     <br />
     <br />
     <a href="https://github.com/nearuaguild"> Explore other examples</a>
