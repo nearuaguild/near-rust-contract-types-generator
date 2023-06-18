@@ -134,6 +134,34 @@ Follow these simple instructions to generate Typescript interface files
    cp ./type_generator/typescript/ /PATH_TO_TYPESCRIPT_PROJECT/
    ```
 
+<!-- CREATING ABI -->
+
+## Creating an ABI
+
+To create an ABI for a rust smart contract, follow these instructions:
+
+1) Build the contract. In this example, create a new folder named /res, compile the smart contract into a wasm file by running
+   
+   ```sh
+   ./build.sh
+   ```
+
+2) Deploy the contract
+
+   ```sh
+   near dev-deploy res/contract.wasm
+   ```
+
+3) Create the ABI
+
+   ```sh
+   cargo near abi
+   ```
+
+This will have created an ABI in the location target/near/near_rust_contract_types_generator_abi.json
+If you want to use this ABI to interact with the contract quickly, you can use Pagoda.
+To do this, link the account that you have deployed the contract to then attach the ABI
+
 <!-- LICENSE -->
 
 ## License
