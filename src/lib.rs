@@ -45,10 +45,22 @@ impl Contract {
     pub fn get_name(&self) -> String {
         self.name.clone()
     }
+    
+    pub fn get_kind(&self) -> Option<(u8, String)> {
+        let result: (u8, String);
 
-    pub fn get_kind(&self) -> Option<Kind> {
         match &self.config {
-            Some(config) => Some(config.kind.clone()),
+            Some(config) => {
+                match &config.kind {
+                    Kind::OK { code } => {
+                        result = (*code, "OK".to_string())
+                    }
+                    Kind::FAIL {code , text} => {
+                        result = (*code, text.to_string())
+                    }
+                }
+                Some(result)
+            }
             None => None,
         }
     }
